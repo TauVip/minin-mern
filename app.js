@@ -4,7 +4,10 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+app.use(express.json({ extended: true }))
+
 app.use('/api/auth', require('./routes/auth.routes'))
+app.use('/api/link', require('./routes/link.routes'))
 
 const PORT = config.get('port') || 5000
 
@@ -23,3 +26,5 @@ async function start() {
 }
 
 start()
+
+// REACT + NODEJS Приложение с Нуля в 1 ролике! | 2:12:55 / 3:34:30 • Работа над-бизнес логикой на сервере
